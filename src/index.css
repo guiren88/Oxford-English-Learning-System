@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sanrio-bg: var(--sanrio-bg);
+  --color-sanrio-primary: var(--sanrio-primary);
+  --color-sanrio-secondary: var(--sanrio-secondary);
+  --color-sanrio-accent: var(--sanrio-accent);
+  --color-sanrio-card: var(--sanrio-card);
+  --color-sanrio-border: var(--sanrio-border);
+  --color-sanrio-text: var(--sanrio-text);
+  --color-sanrio-muted: var(--sanrio-muted);
+}
+
+/* Custom fun animations */
+@keyframes cuteBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes cuteFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+.cute-bounce {
+  animation: cuteBounce 3s ease-in-out infinite;
+}
+
+.cute-float {
+  animation: cuteFloat 4s ease-in-out infinite;
+}
+
+/* 3D Flashcard Perspective and Rotation Styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Print Media Query Rules (A4 optimized & Eco-friendly ink saving) */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body, html {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  .printable-area {
+    width: 210mm;
+    margin: 0 !important;
+    padding: 10mm !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: transparent !important;
+  }
+
+  .print-page-break {
+    page-break-after: always;
+  }
+
+  .print-card {
+    border: 1px dashed #cccccc !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    page-break-inside: avoid;
+  }
+}
+
+/* Dynamic CSS Variables driven by active Sanrio theme on body element */
+body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+  font-family: 'Inter', ui-sans-serif, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* 😈 Kuromi: Dark purple style with elegant neon accents */
+body.theme-kuromi {
+  --sanrio-bg: #190f26;
+  --sanrio-primary: #a75eff;
+  --sanrio-secondary: #2f1b47;
+  --sanrio-accent: #ff4081;
+  --sanrio-card: #25163a;
+  --sanrio-border: #442a66;
+  --sanrio-text: #fdf6ff;
+  --sanrio-muted: #ad8fb8;
+  background-color: var(--sanrio-bg);
+  color: var(--sanrio-text);
+}
+
+/* ☁️ Cinnamoroll: Sky cloud blue style */
+body.theme-cinnamoroll {
+  --sanrio-bg: #f0f7fe;
+  --sanrio-primary: #3b93ff;
+  --sanrio-secondary: #def0ff;
+  --sanrio-accent: #ff8ca3;
+  --sanrio-card: #ffffff;
+  --sanrio-border: #cde6ff;
+  --sanrio-text: #172d4c;
+  --sanrio-muted: #6f8ba6;
+  background-color: var(--sanrio-bg);
+  color: var(--sanrio-text);
+}
+
+/* 🐰 My Melody: Strawberry pink style */
+body.theme-melody {
+  --sanrio-bg: #fff0f3;
+  --sanrio-primary: #ff578a;
+  --sanrio-secondary: #ffe3ea;
+  --sanrio-accent: #ffa6c9;
+  --sanrio-card: #ffffff;
+  --sanrio-border: #ffd1dc;
+  --sanrio-text: #4a1523;
+  --sanrio-muted: #a36f7c;
+  background-color: var(--sanrio-bg);
+  color: var(--sanrio-text);
+}
+
+/* 🍮 Pompompurin: Honey pudding warm yellow */
+body.theme-purin {
+  --sanrio-bg: #fffcf2;
+  --sanrio-primary: #f29e02;
+  --sanrio-secondary: #fef0cd;
+  --sanrio-accent: #7d4401;
+  --sanrio-card: #ffffff;
+  --sanrio-border: #ffeba8;
+  --sanrio-text: #3d1c02;
+  --sanrio-muted: #856a4b;
+  background-color: var(--sanrio-bg);
+  color: var(--sanrio-text);
+}
+
+/* 🌌 Dark Obsidian: Deep sleek obsidian blue-black */
+body.theme-dark {
+  --sanrio-bg: #0b0f19;
+  --sanrio-primary: #438bf2;
+  --sanrio-secondary: #192237;
+  --sanrio-accent: #11cb80;
+  --sanrio-card: #131a29;
+  --sanrio-border: #232d44;
+  --sanrio-text: #ecf3fe;
+  --sanrio-muted: #879ab5;
+  background-color: var(--sanrio-bg);
+  color: var(--sanrio-text);
+}

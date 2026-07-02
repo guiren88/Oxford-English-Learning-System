@@ -1,0 +1,6 @@
+{
+  "name": "Oxford English Learning System",
+  "description": "上海牛津版小学英语 (1A-5B) 核心词汇与句法多媒体学习系统，专为低年级儿童设计，采用 Sanrio 可爱主题、翻转单词卡、随堂测验及 A4 打印练习。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
